@@ -18,6 +18,9 @@ import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Divider
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 
 @Composable
 fun FormDataDiri(modifier: Modifier = Modifier){
@@ -72,5 +75,14 @@ fun FormDataDiri(modifier: Modifier = Modifier){
         onValueChange = {
             textAlamat = it
         }
+    )
+
+    Divider(
+        modifier = Modifier.padding(bottom =
+            dimensionResource( id = R.dimen.padding_medium), top = dimensionResource(
+            id = R.dimen.padding_medium
+        )),
+        thickness = dimensionResource(id = R.dimen.divider_tipis),
+        color = Color.DarkGray
     )
 }
