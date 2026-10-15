@@ -21,6 +21,8 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Divider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Button
 
 @Composable
 fun FormDataDiri(modifier: Modifier = Modifier){
@@ -80,6 +82,27 @@ fun FormDataDiri(modifier: Modifier = Modifier){
     Divider(
         modifier = Modifier.padding(bottom =
             dimensionResource( id = R.dimen.padding_medium), top = dimensionResource(
+            id = R.dimen.padding_medium
+        )),
+        thickness = dimensionResource(id = R.dimen.divider_tipis),
+        color = Color.DarkGray
+    )
+
+    Button(
+        modifier = Modifier.fillMaxWidth(fraction = 1f),
+        // the button is enabled when the user makes a selection
+        enabled = textAlamat.isNotEmpty(),
+        onClick = {
+            nama=textNama
+            jenis=textJK
+            alamat=textAlamat
+        }
+    ){
+        Text("Submit")
+    }
+    Divider(
+        modifier = Modifier.padding(bottom =
+            dimensionResource(id = R.dimen.padding_medium), top = dimensionResource(
             id = R.dimen.padding_medium
         )),
         thickness = dimensionResource(id = R.dimen.divider_tipis),
