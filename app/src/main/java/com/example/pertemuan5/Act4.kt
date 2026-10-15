@@ -23,6 +23,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
+import androidx.compose.foundation.layout.height
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 
 @Composable
 fun FormDataDiri(modifier: Modifier = Modifier){
@@ -108,4 +111,17 @@ fun FormDataDiri(modifier: Modifier = Modifier){
         thickness = dimensionResource(id = R.dimen.divider_tipis),
         color = Color.DarkGray
     )
+    ElevatedCard (
+        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.Black),
+        modifier = Modifier
+            .height(100.dp)
+            .width(300.dp)
+    ){
+        Column (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
+            Text(text = "Nama : "+nama, color = Color.White )
+            Text(text = "Gender : "+jenis, color = Color.White )
+            Text(text = "Alamat : "+alamat, color = Color.White)
+        }
+    }
 }
